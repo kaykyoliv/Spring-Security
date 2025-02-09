@@ -76,13 +76,13 @@ public class SecurityConfig {
     public CommandLineRunner initData(UserDetailsService userDetailsService) {
         return args -> {
             JdbcUserDetailsManager manager = (JdbcUserDetailsManager) userDetailsService;
-            UserDetails user1 = User.withUsername("user1")
-                    .password(passwordEncoder().encode("password1"))
+            UserDetails user1 = User.withUsername("user")
+                    .password(passwordEncoder().encode("user123"))
                     .roles("USER")
                     .build();
             UserDetails admin = User.withUsername("admin")
                     //.password(passwordEncoder().encode("adminPass"))
-                    .password(passwordEncoder().encode("adminPass"))
+                    .password(passwordEncoder().encode("admin123"))
                     .roles("ADMIN")
                     .build();
 
